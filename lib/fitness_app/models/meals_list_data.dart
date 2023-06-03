@@ -17,7 +17,7 @@ class MealsListData {
 
   static List<MealsListData> tabIconsList = <MealsListData>[
     MealsListData(
-      imagePath: 'assets/fitness_app/breakfast.png',
+      imagePath: 'assets/img/136-1367046_industry-icon-png-industry-icon-png-removebg-preview.png',
       titleTxt: 'Reverse Osmosis',
       kacl: 200,
       meals: <String>['Membrane-', 'based', 'desalination'],
@@ -25,7 +25,7 @@ class MealsListData {
       endColor: '#FFB295',
     ),
     MealsListData(
-      imagePath: 'assets/fitness_app/lunch.png',
+      imagePath: 'assets/img/IMG_20230603_064206-removebg-preview.png',
       titleTxt: 'Multi-Stage Flash',
       kacl: 1500,
       meals: <String>['Thermal', 'evaporation', 'process'],
@@ -33,7 +33,7 @@ class MealsListData {
       endColor: '#5C5EDD',
     ),
     MealsListData(
-      imagePath: 'assets/fitness_app/snack.png',
+      imagePath: 'assets/img/IMG_20230603_064305-removebg-preview.png',
       titleTxt: 'Electrodialysis',
       kacl: 150,
       meals: <String>['Ion-exchange', 'separation'],
@@ -41,7 +41,7 @@ class MealsListData {
       endColor: '#FF5287',
     ),
     MealsListData(
-      imagePath: 'assets/fitness_app/dinner.png',
+      imagePath: 'assets/img/IMG_20230603_071129-removebg-preview.png',
       titleTxt: 'Membrane Distillation',
       kacl: 400,
       meals: <String>['Vapor-based', 'purification'],
@@ -49,7 +49,7 @@ class MealsListData {
       endColor: '#1E1466',
     ),
     MealsListData(
-      imagePath: 'assets/fitness_app/breakfast.png',
+      imagePath: 'assets/img/IMG_20230603_071152-removebg-preview.png',
       titleTxt: 'Vapor Compression',
       kacl: 750,
       meals: <String>['Energy-efficient', 'vapor', 'compression'],
@@ -57,7 +57,7 @@ class MealsListData {
       endColor: '#BF0A90',
     ),
     MealsListData(
-      imagePath: 'assets/fitness_app/breakfast.png',
+      imagePath: 'assets/img/WhatsApp Image 2023-06-03 at 7.19.32 AM.jpeg',
       titleTxt: 'Solar Desalination',
       kacl: 300,
       meals: <String>['Sun-', 'powered', 'purification'],
