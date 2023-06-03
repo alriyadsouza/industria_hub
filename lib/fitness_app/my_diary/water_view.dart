@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:industria_hub/fitness_app/ui_view/wave_view.dart';
 import 'package:industria_hub/fitness_app/fitness_app_theme.dart';
 import 'package:industria_hub/main.dart';
@@ -23,6 +25,9 @@ class _WaterViewState extends State<WaterView> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    Random random = Random();
+    int randomNumber4 = 7 + random.nextInt(9 - 7 + 1);
+
     return AnimatedBuilder(
       animation: widget.mainScreenAnimationController!,
       builder: (BuildContext context, Widget? child) {
@@ -69,27 +74,12 @@ class _WaterViewState extends State<WaterView> with TickerProviderStateMixin {
                                       padding: const EdgeInsets.only(
                                           left: 4, bottom: 3),
                                       child: Text(
-                                        '2100',
+                                        randomNumber4.toString(),
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
                                           fontFamily: FitnessAppTheme.fontName,
                                           fontWeight: FontWeight.w600,
                                           fontSize: 32,
-                                          color: FitnessAppTheme.nearlyDarkBlue,
-                                        ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 8, bottom: 8),
-                                      child: Text(
-                                        'ml',
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                          fontFamily: FitnessAppTheme.fontName,
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 18,
-                                          letterSpacing: -0.2,
                                           color: FitnessAppTheme.nearlyDarkBlue,
                                         ),
                                       ),
@@ -100,7 +90,7 @@ class _WaterViewState extends State<WaterView> with TickerProviderStateMixin {
                                   padding: const EdgeInsets.only(
                                       left: 4, top: 2, bottom: 14),
                                   child: Text(
-                                    'of daily goal 3.5L',
+                                    'Water Quality Index',
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                       fontFamily: FitnessAppTheme.fontName,
@@ -131,39 +121,6 @@ class _WaterViewState extends State<WaterView> with TickerProviderStateMixin {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.end,
                                 children: <Widget>[
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: <Widget>[
-                                      Padding(
-                                        padding: const EdgeInsets.only(left: 4),
-                                        child: Icon(
-                                          Icons.access_time,
-                                          color: FitnessAppTheme.grey
-                                              .withOpacity(0.5),
-                                          size: 16,
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 4.0),
-                                        child: Text(
-                                          'Last drink 8:26 AM',
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            fontFamily:
-                                                FitnessAppTheme.fontName,
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 14,
-                                            letterSpacing: 0.0,
-                                            color: FitnessAppTheme.grey
-                                                .withOpacity(0.5),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
                                   Padding(
                                     padding: const EdgeInsets.only(top: 4),
                                     child: Row(
@@ -173,14 +130,14 @@ class _WaterViewState extends State<WaterView> with TickerProviderStateMixin {
                                           CrossAxisAlignment.center,
                                       children: <Widget>[
                                         SizedBox(
-                                          width: 24,
-                                          height: 24,
+                                          width: 14,
+                                          height: 5,
                                           child: Image.asset(
                                               'assets/fitness_app/bell.png'),
                                         ),
                                         Flexible(
                                           child: Text(
-                                            'Your bottle is empty, refill it!.',
+                                            'Desalination is an investment in the resilience and sustainability of our water supply!.',
                                             textAlign: TextAlign.start,
                                             style: TextStyle(
                                               fontFamily:
@@ -221,11 +178,6 @@ class _WaterViewState extends State<WaterView> with TickerProviderStateMixin {
                               ),
                               child: Padding(
                                 padding: const EdgeInsets.all(6.0),
-                                child: Icon(
-                                  Icons.add,
-                                  color: FitnessAppTheme.nearlyDarkBlue,
-                                  size: 24,
-                                ),
                               ),
                             ),
                             const SizedBox(
@@ -245,11 +197,6 @@ class _WaterViewState extends State<WaterView> with TickerProviderStateMixin {
                               ),
                               child: Padding(
                                 padding: const EdgeInsets.all(6.0),
-                                child: Icon(
-                                  Icons.remove,
-                                  color: FitnessAppTheme.nearlyDarkBlue,
-                                  size: 24,
-                                ),
                               ),
                             ),
                           ],
@@ -276,7 +223,7 @@ class _WaterViewState extends State<WaterView> with TickerProviderStateMixin {
                             ],
                           ),
                           child: WaveView(
-                            percentageValue: 60.0,
+                            percentageValue: 60.0, randomNumber4: randomNumber4*10,
                           ),
                         ),
                       )
