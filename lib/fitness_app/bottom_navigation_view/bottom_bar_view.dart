@@ -3,11 +3,13 @@ import 'package:industria_hub/fitness_app/fitness_app_theme.dart';
 import 'package:industria_hub/fitness_app/models/tabIcon_data.dart';
 import 'package:industria_hub/fitness_app/training/training_screen.dart';
 import 'package:industria_hub/fitness_app/ui_view/QA.dart';
+import 'package:industria_hub/fitness_app/ui_view/graph.dart';
 import 'package:industria_hub/main.dart';
 import 'package:flutter/material.dart';
 
 import '../../main.dart';
 import '../models/tabIcon_data.dart';
+import '../ui_view/AboutPage.dart';
 
 class BottomBarView extends StatefulWidget {
   const BottomBarView(
@@ -75,7 +77,7 @@ class _BottomBarViewState extends State<BottomBarView>
                             ),
                             IconButton(
                               icon: const Icon(
-                                Icons.account_box_outlined,
+                                Icons.question_answer,
                                 size: 30.0,
                                 color: Colors.grey,
                               ),
@@ -93,25 +95,35 @@ class _BottomBarViewState extends State<BottomBarView>
                                           parent: animationController!,
                                           curve: Curves.fastOutSlowIn))
                                       .value *
-                                  64.0,
+                                  124.0,
                             ),
-                            Expanded(
-                              child: TabIcons(
-                                  tabIconData: widget.tabIconsList?[2],
-                                  removeAllSelect: () {
-                                    setRemoveAllSelection(
-                                        widget.tabIconsList?[2]);
-                                    widget.changeIndex!(2);
-                                  }),
+                            IconButton(
+                              icon: const Icon(
+                                Icons.account_box_outlined,
+                                size: 30.0,
+                                color: Colors.grey,
+                              ),
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => AboutUsApp()),
+                                );
+                              },
+                              tooltip: 'Locate',
                             ),
-                            Expanded(
-                              child: TabIcons(
-                                  tabIconData: widget.tabIconsList?[3],
-                                  removeAllSelect: () {
-                                    setRemoveAllSelection(
-                                        widget.tabIconsList?[3]);
-                                    widget.changeIndex!(3);
-                                  }),
+                            IconButton(
+                              icon: const Icon(
+                                Icons.auto_graph_sharp,
+                                size: 30.0,
+                                color: Colors.grey,
+                              ),
+                              onPressed: () {
+                                // Navigator.push(
+                                //   context,
+                                //   MaterialPageRoute(builder: (context) => CostGraphWidget(initialCost: 100.0)),
+                                // );
+                              },
+                              tooltip: 'Locate',
                             ),
                           ],
                         ),
