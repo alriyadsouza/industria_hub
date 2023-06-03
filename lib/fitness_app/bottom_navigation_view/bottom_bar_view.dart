@@ -1,6 +1,8 @@
 import 'dart:math' as math;
 import 'package:industria_hub/fitness_app/fitness_app_theme.dart';
 import 'package:industria_hub/fitness_app/models/tabIcon_data.dart';
+import 'package:industria_hub/fitness_app/training/training_screen.dart';
+import 'package:industria_hub/fitness_app/ui_view/QA.dart';
 import 'package:industria_hub/main.dart';
 import 'package:flutter/material.dart';
 
@@ -71,14 +73,19 @@ class _BottomBarViewState extends State<BottomBarView>
                                     widget.changeIndex!(0);
                                   }),
                             ),
-                            Expanded(
-                              child: TabIcons(
-                                  tabIconData: widget.tabIconsList?[1],
-                                  removeAllSelect: () {
-                                    setRemoveAllSelection(
-                                        widget.tabIconsList?[1]);
-                                    widget.changeIndex!(1);
-                                  }),
+                            IconButton(
+                              icon: const Icon(
+                                Icons.account_box_outlined,
+                                size: 30.0,
+                                color: Colors.grey,
+                              ),
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => QAPage()),
+                                );
+                              },
+                              tooltip: 'Locate',
                             ),
                             SizedBox(
                               width: Tween<double>(begin: 0.0, end: 1.0)

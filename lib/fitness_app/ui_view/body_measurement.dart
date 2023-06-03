@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:industria_hub/fitness_app/fitness_app_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -10,6 +12,11 @@ class BodyMeasurementView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Random random = Random();
+    int randomNumber1 = 90000000 + random.nextInt(120000000 - 90000000 + 1);
+    int randomNumber2 = 7000000 + random.nextInt(15000000 - 7000000 + 1);
+    int randomNumber3 = 500000 + random.nextInt(1000000 - 500000 + 1);
+
     return AnimatedBuilder(
       animation: animationController!,
       builder: (BuildContext context, Widget? child) {
@@ -71,12 +78,12 @@ class BodyMeasurementView extends StatelessWidget {
                                     padding: const EdgeInsets.only(
                                         left: 4, bottom: 3),
                                     child: Text(
-                                      '206.8',
+                                      randomNumber1.toString(),
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                         fontFamily: FitnessAppTheme.fontName,
                                         fontWeight: FontWeight.w600,
-                                        fontSize: 32,
+                                        fontSize: 23,
                                         color: FitnessAppTheme.nearlyDarkBlue,
                                       ),
                                     ),
@@ -90,7 +97,7 @@ class BodyMeasurementView extends StatelessWidget {
                                       style: TextStyle(
                                         fontFamily: FitnessAppTheme.fontName,
                                         fontWeight: FontWeight.w500,
-                                        fontSize: 18,
+                                        fontSize: 16,
                                         letterSpacing: -0.2,
                                         color: FitnessAppTheme.nearlyDarkBlue,
                                       ),
@@ -105,12 +112,6 @@ class BodyMeasurementView extends StatelessWidget {
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: <Widget>[
-                                      Icon(
-                                        Icons.access_time,
-                                        color: FitnessAppTheme.grey
-                                            .withOpacity(0.5),
-                                        size: 16,
-                                      ),
                                       Padding(
                                         padding:
                                             const EdgeInsets.only(left: 4.0),
@@ -134,7 +135,7 @@ class BodyMeasurementView extends StatelessWidget {
                                     padding: const EdgeInsets.only(
                                         top: 4, bottom: 14),
                                     child: Text(
-                                      'InBody SmartScale',
+                                      randomNumber2.toString(),
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                         fontFamily: FitnessAppTheme.fontName,
@@ -187,7 +188,7 @@ class BodyMeasurementView extends StatelessWidget {
                                 Padding(
                                   padding: const EdgeInsets.only(top: 6),
                                   child: Text(
-                                    'Height',
+                                    randomNumber3.toString(),
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                       fontFamily: FitnessAppTheme.fontName,

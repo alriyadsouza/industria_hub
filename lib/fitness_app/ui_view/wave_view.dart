@@ -2,11 +2,13 @@ import 'dart:math' as math;
 import 'package:industria_hub/fitness_app/fitness_app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math.dart' as vector;
+import 'package:industria_hub/fitness_app/my_diary/water_view.dart';
 
 class WaveView extends StatefulWidget {
   final double percentageValue;
+  final int randomNumber4;
 
-  const WaveView({Key? key, this.percentageValue = 100.0}) : super(key: key);
+  const WaveView({Key? key, this.percentageValue = 100.0, this.randomNumber4=90}) : super(key: key);
   @override
   _WaveViewState createState() => _WaveViewState();
 }
@@ -18,6 +20,7 @@ class _WaveViewState extends State<WaveView> with TickerProviderStateMixin {
   List<Offset> animList1 = [];
   Offset bottleOffset2 = Offset(60, 0);
   List<Offset> animList2 = [];
+
 
   @override
   void initState() {
@@ -40,9 +43,9 @@ class _WaveViewState extends State<WaveView> with TickerProviderStateMixin {
           new Offset(
             i.toDouble() + bottleOffset1.dx.toInt(),
             math.sin((waveAnimationController!.value * 360 - i) %
-                        360 *
-                        vector.degrees2Radians) *
-                    4 +
+                360 *
+                vector.degrees2Radians) *
+                4 +
                 (((100 - widget.percentageValue) * 160 / 100)),
           ),
         );
@@ -53,9 +56,9 @@ class _WaveViewState extends State<WaveView> with TickerProviderStateMixin {
           new Offset(
             i.toDouble() + bottleOffset2.dx.toInt(),
             math.sin((waveAnimationController!.value * 360 - i) %
-                        360 *
-                        vector.degrees2Radians) *
-                    4 +
+                360 *
+                vector.degrees2Radians) *
+                4 +
                 (((100 - widget.percentageValue) * 160 / 100)),
           ),
         );
@@ -134,7 +137,7 @@ class _WaveViewState extends State<WaveView> with TickerProviderStateMixin {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      widget.percentageValue.round().toString(),
+                      widget.randomNumber4.toString(),
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontFamily: FitnessAppTheme.fontName,

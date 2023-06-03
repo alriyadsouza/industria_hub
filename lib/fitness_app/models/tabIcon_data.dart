@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:industria_hub/fitness_app/ui_view/QA.dart';
 
 class TabIconData {
   TabIconData({
@@ -46,4 +47,51 @@ class TabIconData {
       animationController: null,
     ),
   ];
+}
+
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Tab Icons Example'),
+      ),
+      body: Center(
+        child: GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+          ),
+          itemCount: TabIconData.tabIconsList.length,
+          itemBuilder: (context, index) {
+            final tabIcon = TabIconData.tabIconsList[index];
+
+            return InkWell(
+              onTap: () {
+                if (index == 2) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => QAPage()),
+                  );
+                }
+              },
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    tabIcon.isSelected
+                        ? tabIcon.selectedImagePath
+                        : tabIcon.imagePath,
+                    width: 50,
+                    height: 50,
+                  ),
+                  SizedBox(height: 8),
+                  Text('Tab ${index + 1}'),
+                ],
+              ),
+            );
+          },
+        ),
+      ),
+    );
+  }
 }
