@@ -1,87 +1,69 @@
-// import 'dart:math';
-// import 'dart:ui' as ui;
-//
 // import 'package:flutter/material.dart';
+// import 'package:syncfusion_flutter_charts/charts.dart';
+// import 'package:syncfusion_flutter_charts/sparkcharts.dart';
 //
-// class CostGraphGenerator {
-//   ui.Picture generateCostGraph(double initialCost) {
-//     // Define the time period and calculate the costs
-//     final timePeriod = List<int>.generate(12, (index) => index + 1); // Assuming a 12-month period
-//     final costs = timePeriod.map((month) => initialCost * pow(1.1, month)).toList(); // Assuming a 10% increase per month
-//
-//     final recorder = ui.PictureRecorder();
-//     final canvas = Canvas(recorder);
-//
-//     // Draw the graph on the canvas
-//     final width = 400;
-//     final height = 300;
-//     final bgColor = const Color(0xFFF5F5F5); // lightgray
-//     final lineColor = const Color(0xFF800080); // purple
-//
-//     canvas.drawColor(bgColor, BlendMode.srcOver);
-//
-//     final linePaint = Paint()
-//       ..color = lineColor
-//       ..style = PaintingStyle.stroke
-//       ..strokeWidth = 2.0;
-//
-//     final points = List<Offset>.generate(12, (index) => Offset(index.toDouble() * 30, -costs[index] * 0.02)).toList();
-//     final path = Path()..addPolygon(points, false);
-//     canvas.drawPath(path, linePaint);
-//
-//     final picture = recorder.endRecording();
-//     return picture;
-//   }
-// }
-//
-// class CostGraphWidget extends StatefulWidget {
-//   final double initialCost;
-//
-//   const CostGraphWidget({Key? key, required this.initialCost}) : super(key: key);
-//
-//   @override
-//   _CostGraphWidgetState createState() => _CostGraphWidgetState();
-// }
-//
-// class _CostGraphWidgetState extends State<CostGraphWidget> {
-//   late ui.Picture costGraph;
-//
-//   @override
-//   void initState() {
-//     super.initState();
-//     generateGraph();
-//   }
-//
-//   Future<void> generateGraph() async {
-//     final costGraphGenerator = CostGraphGenerator();
-//     costGraph = costGraphGenerator.generateCostGraph(widget.initialCost);
-//   }
-//
+// class GraphApp extends StatelessWidget {
 //   @override
 //   Widget build(BuildContext context) {
-//     return CustomPaint(
-//       painter: _GraphPainter(costGraph),
+//     return MaterialApp(
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: Text('Graph Example'),
+//         ),
+//         body: Center(
+//           child: GraphWidget(),
+//         ),
+//       ),
 //     );
 //   }
 // }
 //
-// class _GraphPainter extends CustomPainter {
-//   final ui.Picture costGraph;
+// class GraphWidget extends StatefulWidget {
+//   @override
+//   _GraphWidgetState createState() => _GraphWidgetState();
+// }
 //
-//   _GraphPainter(this.costGraph);
+// class _GraphWidgetState extends State<GraphWidget> {
+//   late List<SalesData> _data;
 //
 //   @override
-//   void paint(Canvas canvas, Size size) {
-//     final pictureWidth = costGraph.width.toDouble();
-//     final pictureHeight = costGraph.height.toDouble();
-//     final src = Rect.fromLTRB(0, 0, pictureWidth, pictureHeight);
-//     final dst = Rect.fromLTWH(0, 0, size.width, size.height);
+//   void initState() {
+//     super.initState();
+//     _data = _generateData();
+//   }
 //
-//     canvas.drawPicture(costGraph, src, dst, Paint());
+//   List<SalesData> _generateData() {
+//     return [
+//       SalesData(0, 10),
+//       SalesData(1, 20),
+//       SalesData(2, 30),
+//       SalesData(3, 40),
+//       SalesData(4, 50),
+//     ];
 //   }
 //
 //   @override
-//   bool shouldRepaint(covariant CustomPainter oldDelegate) {
-//     return false;
+//   Widget build(BuildContext context) {
+//     return Container(
+//       height: 300,
+//       padding: EdgeInsets.all(16),
+//       child: SfCartesianChart(
+//         primaryXAxis: NumericAxis(),
+//         series: <LineSeries<SalesData, int>>[
+//           LineSeries<SalesData, int>(
+//             dataSource: _data,
+//             xValueMapper: (SalesData sales, _) => sales.month,
+//             yValueMapper: (SalesData sales, _) => sales.value,
+//           ),
+//         ],
+//       ),
+//     );
 //   }
+// }
+//
+// class SalesData {
+//   final int month;
+//   final int value;
+//
+//   SalesData(this.month, this.value);
 // }

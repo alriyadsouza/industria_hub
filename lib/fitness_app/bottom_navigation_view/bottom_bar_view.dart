@@ -120,7 +120,7 @@ class _BottomBarViewState extends State<BottomBarView>
                               onPressed: () {
                                 // Navigator.push(
                                 //   context,
-                                //   MaterialPageRoute(builder: (context) => CostGraphWidget(initialCost: 100.0)),
+                                //   MaterialPageRoute(builder: (context) => GraphApp()),
                                 // );
                               },
                               tooltip: 'Locate',
