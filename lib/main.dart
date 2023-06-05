@@ -2,9 +2,8 @@ import 'dart:io';
 import 'package:industria_hub/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:industria_hub/fitness_app/fitness_app_home_screen.dart';
-import 'fitness_app/my_diary/my_diary_screen.dart';
-import 'model/homelist.dart';
+import 'package:industria_hub/app/fitness_app_home_screen.dart';
+import 'app/my_diary/my_diary_screen.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 
 void main() => runApp(MyApp());

@@ -1,4 +1,4 @@
-import 'package:industria_hub/fitness_app/fitness_app_home_screen.dart';
+import 'package:industria_hub/app/fitness_app_home_screen.dart';
 import 'package:flutter/widgets.dart';
 
 class HomeList {

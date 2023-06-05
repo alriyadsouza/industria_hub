@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:industria_hub/fitness_app/ui_view/QA.dart';
+import 'package:industria_hub/app/ui_view/QA.dart';
 
 class TabIconData {
   TabIconData({

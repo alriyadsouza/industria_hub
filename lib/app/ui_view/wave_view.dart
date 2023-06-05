@@ -1,8 +1,8 @@
 import 'dart:math' as math;
-import 'package:industria_hub/fitness_app/fitness_app_theme.dart';
+import 'package:industria_hub/app/fitness_app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math.dart' as vector;
-import 'package:industria_hub/fitness_app/my_diary/water_view.dart';
+import 'package:industria_hub/app/my_diary/water_view.dart';
 
 class WaveView extends StatefulWidget {
   final double percentageValue;

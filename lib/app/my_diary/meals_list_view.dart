@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:industria_hub/fitness_app/fitness_app_theme.dart';
-import 'package:industria_hub/fitness_app/models/meals_list_data.dart';
+import 'package:industria_hub/app/fitness_app_theme.dart';
+import 'package:industria_hub/app/models/meals_list_data.dart';
 
 import '../../main.dart';
 import '../fitness_app_home_screen.dart';

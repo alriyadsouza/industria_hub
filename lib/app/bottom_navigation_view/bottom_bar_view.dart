@@ -1,8 +1,8 @@
 import 'dart:math' as math;
-import 'package:industria_hub/fitness_app/fitness_app_theme.dart';
-import 'package:industria_hub/fitness_app/models/tabIcon_data.dart';
-import 'package:industria_hub/fitness_app/training/training_screen.dart';
-import 'package:industria_hub/fitness_app/ui_view/QA.dart';
+import 'package:industria_hub/app/fitness_app_theme.dart';
+import 'package:industria_hub/app/models/tabIcon_data.dart';
+import 'package:industria_hub/app/training/training_screen.dart';
+import 'package:industria_hub/app/ui_view/QA.dart';
 import 'package:industria_hub/main.dart';
 import 'package:flutter/material.dart';
 

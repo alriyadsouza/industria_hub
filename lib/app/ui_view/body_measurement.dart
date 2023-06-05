@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:industria_hub/fitness_app/fitness_app_theme.dart';
+import 'package:industria_hub/app/fitness_app_theme.dart';
 import 'package:flutter/material.dart';
 
 class BodyMeasurementView extends StatelessWidget {
